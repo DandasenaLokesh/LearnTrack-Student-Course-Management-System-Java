@@ -9,13 +9,13 @@ import java.util.Scanner;
 import static com.learntrack.util.IdGenerator.*;
 
 public class CourseService {
-    public void CourseMenu(Scanner sc){
+    public void courseMenu(Scanner sc){
         try {
-            Boolean isStudentSystem = true;
+            Boolean isCourseSystemActive = true;
             ArrayList<Course> courseList = getCourseList();
             System.out.println("\n--- Welcome to LearnTrack's Course Management System ---");
 
-            while (isStudentSystem){
+            while (isCourseSystemActive){
                 System.out.println("--- Course Management Menu ---");
                 System.out.println("1. Add new course");
                 System.out.println("2. View all courses");
@@ -36,7 +36,7 @@ public class CourseService {
                             updateCourseStatus(courseList, sc);
                             break;
                         case 4:
-                            isStudentSystem = false;
+                            isCourseSystemActive = false;
                             break;
                         default:
                             System.out.println("Invalid Choice");

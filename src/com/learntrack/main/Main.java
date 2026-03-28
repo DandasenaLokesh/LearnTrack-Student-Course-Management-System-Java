@@ -9,12 +9,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean islearnTrackSystemActive = true;
+        boolean isLearnTrackSystemActive = true;
         StudentService studentService = new StudentService();
         CourseService courseService = new CourseService();
         EnrollmentService enrollmentService = new EnrollmentService();
         System.out.println("Welcome to LearnTrack System");
-        while(islearnTrackSystemActive){
+        while(isLearnTrackSystemActive){
             System.out.println("\n===== LearnTrack Management System =====");
             System.out.println("1. Student Management");
             System.out.println("2. Course Management");
@@ -26,13 +26,13 @@ public class Main {
                     studentService.studentMenu(sc);
                     break;
                 case 2:
-                    courseService.CourseMenu(sc);
+                    courseService.courseMenu(sc);
                     break;
                 case 3:
-                    enrollmentService.EnrollmentMenu(sc);
+                    enrollmentService.enrollmentMenu(sc);
                     break;
                 case 4:
-                    islearnTrackSystemActive = false;
+                    isLearnTrackSystemActive = false;
                     System.out.println("Exiting LearnTrack Management System");
                     break;
                 default:

@@ -14,13 +14,13 @@ import static com.learntrack.util.IdGenerator.getEnrollmentList;
 import static com.learntrack.util.IdGenerator.getStudentList;
 
 public class EnrollmentService {
-    public void EnrollmentMenu(Scanner sc){
+    public void enrollmentMenu(Scanner sc){
         try {
-            Boolean isStudentSystem = true;
+            Boolean isEnrollmentSystemActive = true;
             ArrayList<Enrollment> enrollmentList = getEnrollmentList();
             System.out.println("\n--- Welcome to LearnTrack's Enrollment System ---");
 
-            while (isStudentSystem){
+            while (isEnrollmentSystemActive){
                 System.out.println("--- Enrollment Menu ---");
                 System.out.println("1. Enroll a student in a course");
                 System.out.println("2. View enrollments for a student");
@@ -39,7 +39,7 @@ public class EnrollmentService {
                             markEnrollment(sc, enrollmentList);
                             break;
                         case 4:
-                            isStudentSystem = false;
+                            isEnrollmentSystemActive = false;
                             break;
                         default:
                             System.out.println("Invalid Choice");

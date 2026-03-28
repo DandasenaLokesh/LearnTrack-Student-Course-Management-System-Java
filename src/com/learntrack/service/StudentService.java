@@ -12,11 +12,11 @@ import static com.learntrack.util.IdGenerator.getStudentList;
 public class StudentService {
     public void studentMenu(Scanner sc){
         try {
-            Boolean isStudentSystem = true;
+            Boolean isStudentSystemActive = true;
             ArrayList<Student> studentList = getStudentList();
             System.out.println("\n--- Welcome to LearnTrack's Student System ---");
 
-            while (isStudentSystem){
+            while (isStudentSystemActive){
                 System.out.println("--- Student Menu ---");
                 System.out.println("1. Add Student");
                 System.out.println("2. View All Students");
@@ -35,14 +35,14 @@ public class StudentService {
                             viewAllStudents(studentList);
                             break;
                         case 3:
-                            Student searchedStudent = searchStudentByID(studentList, sc);
+                            Student searchedStudent = searchStudentById(studentList, sc);
                             System.out.println("Here is the Student Details: " + searchedStudent);
                             break;
                         case 4:
-                            DeactivateStudent(studentList, sc);
+                            deactivateStudent(studentList, sc);
                             break;
                         case 5:
-                            isStudentSystem = false;
+                            isStudentSystemActive = false;
                             break;
                         default:
                             System.out.println("Invalid Choice");
@@ -91,7 +91,7 @@ public class StudentService {
         }
     }
 
-    public Student searchStudentByID(ArrayList<Student> studentList, Scanner sc){
+    public Student searchStudentById(ArrayList<Student> studentList, Scanner sc){
         try {
             int studentId = readInt(sc, "Enter Student ID: ");
             return findStudentById(studentList, studentId);
@@ -102,7 +102,7 @@ public class StudentService {
         }
     }
 
-    public void DeactivateStudent(ArrayList<Student> studentList, Scanner sc){
+    public void deactivateStudent(ArrayList<Student> studentList, Scanner sc){
         try {
             System.out.println("Deactivate Student");
             int studentId = readInt(sc, "Enter Student ID: ");
