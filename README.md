@@ -6,6 +6,76 @@ LearnTrack is a console-based Student, Course, and Enrollment Management System 
 
 This project demonstrates core Java concepts through a menu-driven application. It includes student management, course management, and enrollment tracking while also showing encapsulation, inheritance, static utility methods, custom exception handling, and simple clean-code practices.
 
+## Class Diagram
+
+```mermaid
+classDiagram
+    class Person {
+        -int id
+        -String firstName
+        -String lastName
+        -String email
+        +getId()
+        +getFirstName()
+        +getLastName()
+        +getEmail()
+        +getDisplayName()
+    }
+
+    class Student {
+        -String batch
+        -boolean active
+        +getBatch()
+        +getActive()
+        +getDisplayName()
+    }
+
+    class Trainer {
+        -String batch
+        -String studentId
+        -String courseId
+        -String enrollmentId
+        +getDisplayName()
+    }
+
+    class Course {
+        -int id
+        -String courseName
+        -String description
+        -int durationInWeeks
+        -boolean active
+    }
+
+    class Enrollment {
+        -String id
+        -int studentId
+        -int courseId
+        -LocalDate enrollmentDate
+        -Status status
+    }
+
+    class StudentService
+    class CourseService
+    class EnrollmentService
+    class IdGenerator
+    class Status
+    class EntityNotFoundException
+
+    Person <|-- Student
+    Person <|-- Trainer
+    Enrollment --> Status
+    StudentService ..> Student
+    CourseService ..> Course
+    EnrollmentService ..> Enrollment
+    EnrollmentService ..> Student
+    EnrollmentService ..> Course
+    StudentService ..> IdGenerator
+    CourseService ..> IdGenerator
+    EnrollmentService ..> IdGenerator
+```
+
+This diagram shows the main inheritance and service relationships used in the project. `Student` and `Trainer` inherit common person details from `Person`, while the service classes manage the in-memory lists and operations for the entities.
+
 ## Project Structure
 
 ```text
