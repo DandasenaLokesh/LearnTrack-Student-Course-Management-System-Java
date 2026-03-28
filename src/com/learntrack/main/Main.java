@@ -1,6 +1,5 @@
 package com.learntrack.main;
 
-import com.learntrack.model.Course;
 import com.learntrack.service.CourseService;
 import com.learntrack.service.EnrollmentService;
 import com.learntrack.service.StudentService;
@@ -21,8 +20,7 @@ public class Main {
             System.out.println("2. Course Management");
             System.out.println("3. Enrollment Management");
             System.out.println("4. Exit");
-            System.out.print("Please select an option: ");
-            int isLearnTrackSystemChoice = sc.nextInt();
+            int isLearnTrackSystemChoice = readInt(sc, "Please select an option: ");
             switch (isLearnTrackSystemChoice){
                 case 1:
                     studentService.studentMenu(sc);
@@ -42,5 +40,16 @@ public class Main {
             }
         }
         sc.close();
+    }
+
+    private static int readInt(Scanner sc, String message) {
+        while (true) {
+            try {
+                System.out.print(message);
+                return Integer.parseInt(sc.next());
+            } catch (NumberFormatException exception) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+        }
     }
 }
