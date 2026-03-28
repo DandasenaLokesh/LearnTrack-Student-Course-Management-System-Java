@@ -1,8 +1,8 @@
-package com.learntrack.main;
+package com.airtribe.learntrack.main;
 
-import com.learntrack.service.CourseService;
-import com.learntrack.service.EnrollmentService;
-import com.learntrack.service.StudentService;
+import com.airtribe.learntrack.service.CourseService;
+import com.airtribe.learntrack.service.EnrollmentService;
+import com.airtribe.learntrack.service.StudentService;
 
 import java.util.Scanner;
 

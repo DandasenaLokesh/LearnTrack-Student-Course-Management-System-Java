@@ -1,4 +1,4 @@
-package com.learntrack.exception;
+package com.airtribe.learntrack.exception;
 
 public class EntityNotFoundException extends RuntimeException {
     public EntityNotFoundException(String message) {

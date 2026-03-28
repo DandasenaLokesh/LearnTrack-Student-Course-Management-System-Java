@@ -1,8 +1,8 @@
-package com.learntrack.util;
+package com.airtribe.learntrack.util;
 
-import com.learntrack.model.Course;
-import com.learntrack.model.Enrollment;
-import com.learntrack.model.Student;
+import com.airtribe.learntrack.model.Course;
+import com.airtribe.learntrack.model.Enrollment;
+import com.airtribe.learntrack.model.Student;
 
 import java.util.ArrayList;
 

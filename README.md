@@ -118,20 +118,20 @@ This diagram shows the main inheritance and service relationships used in the pr
 1. Open this folder in IntelliJ IDEA.
 2. Wait for Maven project import from `pom.xml`.
 3. Open `src/com/learntrack/main/Main.java`.
-4. Run `com.learntrack.main.Main`.
+4. Run `main.com.airtribe.learntrack.Main`.
 
 ### Terminal with `javac`
 
 ```powershell
 javac -d out (Get-ChildItem src -Recurse -Filter *.java | Select-Object -ExpandProperty FullName)
-java -cp out com.learntrack.main.Main
+java -cp out main.com.airtribe.learntrack.Main
 ```
 
 ### Terminal with Maven
 
 ```bash
 mvn -q compile
-mvn -q exec:java -Dexec.mainClass=com.learntrack.main.Main
+mvn -q exec:java -Dexec.mainClass=main.com.airtribe.learntrack.Main
 ```
 
 ## Additional Documentation

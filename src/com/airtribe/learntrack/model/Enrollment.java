@@ -1,9 +1,8 @@
-package com.learntrack.model;
+package com.airtribe.learntrack.model;
 
-import com.learntrack.util.Status;
+import com.airtribe.learntrack.util.Status;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Enrollment {
     private String id;

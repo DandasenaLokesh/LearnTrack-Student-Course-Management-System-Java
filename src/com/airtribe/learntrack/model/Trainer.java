@@ -1,6 +1,4 @@
-package com.learntrack.model;
-
-import com.learntrack.model.Person;
+package com.airtribe.learntrack.model;
 
 public class Trainer extends Person {
     private String batch;

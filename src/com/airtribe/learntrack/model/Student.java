@@ -1,4 +1,4 @@
-package com.learntrack.model;
+package com.airtribe.learntrack.model;
 
 public class Student extends Person{
     private String batch;

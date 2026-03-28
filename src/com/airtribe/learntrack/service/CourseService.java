@@ -1,12 +1,12 @@
-package com.learntrack.service;
+package com.airtribe.learntrack.service;
 
-import com.learntrack.exception.EntityNotFoundException;
-import com.learntrack.model.Course;
+import com.airtribe.learntrack.exception.EntityNotFoundException;
+import com.airtribe.learntrack.model.Course;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.learntrack.util.IdGenerator.*;
+import static com.airtribe.learntrack.util.IdGenerator.*;
 
 public class CourseService {
     public void courseMenu(Scanner sc){
