@@ -116,6 +116,48 @@ public class StudentService {
         }
     }
 
+    public void removeStudent(ArrayList<Student> studentList, Scanner sc){
+        try {
+            System.out.println("Remove Student");
+            int studentId = readInt(sc, "Enter Student ID: ");
+            Student searchedStudent = findStudentById(studentList, studentId);
+            searchedStudent.setActive(false);
+            System.out.print("Student ID: "+ searchedStudent.getId()+ " Name: "+searchedStudent.getFirstName() +" "+ searchedStudent.getLastName()  + " has been Removed");
+        } catch (EntityNotFoundException exception) {
+            throw exception;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateStudent(ArrayList<Student> studentList, Scanner sc){
+        try {
+            System.out.println("Update Student");
+            int studentId = readInt(sc, "Enter Student ID: ");
+            Student searchedStudent = findStudentById(studentList, studentId);
+            System.out.print("Enter Updated First Name :");
+            String studentFirstName = sc.next();
+            System.out.print("Enter Updated Last Name :");
+            String studentLastName = sc.next();
+            System.out.print("Enter Updated Batch :");
+            String studentBatch = sc.next();
+            boolean isStudentActive = readBoolean(sc, "Enter if student is active (true/false):");
+            updateStudent(searchedStudent, studentFirstName, studentLastName, studentBatch, isStudentActive);
+            System.out.print("Student ID: "+ searchedStudent.getId()+ " has been Updated");
+        } catch (EntityNotFoundException exception) {
+            throw exception;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateStudent(Student student, String firstName, String lastName, String batch, boolean active){
+        student.setFirstName(firstName);
+        student.setLastName(lastName);
+        student.setBatch(batch);
+        student.setActive(active);
+    }
+
     private Student findStudentById(ArrayList<Student> studentList, int studentId) {
         for(Student searchedStudent : studentList) {
             if (searchedStudent.getId() == studentId) {

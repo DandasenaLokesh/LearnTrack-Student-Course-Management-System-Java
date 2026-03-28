@@ -41,6 +41,11 @@ public class Student extends Person{
     }
 
     @Override
+    public String getDisplayName() {
+        return "Student: " + getFirstName() + " " + getLastName() + " (" + batch + ")";
+    }
+
+    @Override
     public String toString() {
         return "Student{" +
                 "id='" + getId() + '\'' +
